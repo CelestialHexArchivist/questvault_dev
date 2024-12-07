@@ -38,6 +38,8 @@ A Python-based GUI application for scraping, managing, and searching video game 
 
 # QuestVault Development Tasks
 
+Current Closed Development Focus: Rebuilding the application with consolidated app packages for efficiency and reduced redundancy. Test themes will be implemented first with DB and other functionality having "higher priority". User modified themes will be implemented in later development cycles. The focus is currently on MVP.
+
 ## High Priority Tasks
 
 ### 1. Core System Improvements
@@ -50,10 +52,6 @@ A Python-based GUI application for scraping, managing, and searching video game 
 
 ### 2. GUI Enhancements
 - [ ] Add missing UI components from design:
-  - Search results area
-  - Status bar
-  - Database selection button
-  - Start scraping button
 - [ ] Implement proper layout management for responsive design
 - [ ] Add proper scrolling support for search results
 - [ ] Create proper status feedback system
@@ -144,7 +142,7 @@ A Python-based GUI application for scraping, managing, and searching video game 
 
 ---
 
-*Last Updated: [Current Date]*
+*Last Updated: 12/06/2024*
 
 
 ## Installation
@@ -182,11 +180,13 @@ python main_gui.py
 1. **Adding Domains**
    - Enter the wiki URL in the input field
    - Click "Add Domain" to register
+   - Click "Show Domains" to list all registered domains
+   - Click "Start Scraping" to begin data collection or
+   - Click "Select Domains to Scrape" to open a tree view and selectively scrape to each domains' database
 
 2. **Managing Data**
-   - Use "Select Database" to choose storage location
-   - Click "Start Scraping" to begin data collection
-   - Search using the keyword field
+   - Use "Select Database" to choose the "Game" or associated domain
+   - Search using the keyword field by name or tag
 
 ### Configuration
 - Theme customization via `resources/theme.json`
@@ -236,13 +236,6 @@ See `CONTRIBUTING.md` for detailed guidelines.
 - GUI tests using pytest-kivy
 - Performance testing for cache system
 
-## Roadmap
-See `to_do_list.md` for detailed development plans, including:
-- Multi-threaded scraping
-- Cloud database integration
-- Mobile platform support
-- Enhanced search capabilities
-
 ## License
 This project is licensed under the MIT License - see LICENSE file for details.
 
@@ -258,5 +251,3 @@ This project is licensed under the MIT License - see LICENSE file for details.
 - Contact maintainers for security concerns
 
 ---
-
-*For detailed documentation, visit our [Wiki](https://github.com/username/questvault/wiki)*
