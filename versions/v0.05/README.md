@@ -35,6 +35,116 @@ A Python-based GUI application for scraping, managing, and searching video game 
   - Rotating file logs
   - Structured logging format
 
+
+# QuestVault Development Tasks
+
+Current Closed Development Focus: Rebuilding the application with consolidated app packages for efficiency and reduced redundancy. Test themes will be implemented first with DB and other functionality having "higher priority". User modified themes will be implemented in later development cycles. The focus is currently on MVP.
+
+## High Priority Tasks
+
+### 1. Core System Improvements
+- [ ] Fix theme repair system in `core/ui/theme.py`
+  - Implement proper theme validation
+  - Add theme backup/restore functionality
+- [ ] Complete the `add_url` callback in `main_gui.py`
+- [ ] Implement status label updates throughout the application
+- [ ] Add proper error handling for database operations
+
+### 2. GUI Enhancements
+- [ ] Add missing UI components from design:
+- [ ] Implement proper layout management for responsive design
+- [ ] Add proper scrolling support for search results
+- [ ] Create proper status feedback system
+
+### 3. Cache System
+- [ ] Complete cache cleanup implementation in `core/cache_manager.py`
+- [ ] Add cache size monitoring
+- [ ] Implement cache invalidation strategy
+- [ ] Add error handling for cache operations
+
+## Medium Priority Tasks
+
+### 4. Database Management
+- [ ] Add database migration system
+- [ ] Implement proper concurrent operation handling
+- [ ] Add database backup functionality
+- [ ] Create database verification system
+
+### 5. Testing
+- [ ] Add tests for theme system
+- [ ] Create GUI component tests
+- [ ] Add cache system tests
+- [ ] Implement database operation tests
+
+### 6. Documentation
+- [ ] Document theme customization process
+- [ ] Add inline documentation for UI components
+- [ ] Create developer setup guide
+- [ ] Document testing procedures
+
+## Low Priority Tasks
+
+### 7. Performance Optimization
+- [ ] Optimize image caching system
+- [ ] Implement lazy loading for search results
+- [ ] Add background processing for heavy operations
+- [ ] Optimize database queries
+
+### 8. User Experience
+- [ ] Add loading indicators
+- [ ] Implement proper error messages
+- [ ] Create user preferences system
+- [ ] Add keyboard shortcuts
+
+### 9. Features
+- [ ] Add export functionality for search results
+- [ ] Implement advanced search filters
+- [ ] Add batch operations for domains
+- [ ] Create data visualization features
+
+## Future Considerations
+
+### 10. Advanced Features
+- [ ] Multi-threaded scraping support
+- [ ] Cloud sync capabilities
+- [ ] Plugin system for custom scrapers
+- [ ] Mobile platform support
+
+### 11. Infrastructure
+- [ ] Set up CI/CD pipeline
+- [ ] Add automated deployment
+- [ ] Create update mechanism
+- [ ] Implement telemetry system
+
+### 12. Security
+- [ ] Add input validation
+- [ ] Implement rate limiting
+- [ ] Add secure storage for sensitive data
+- [ ] Create access control system
+
+## Notes
+- Priority levels may change based on user feedback
+- Tasks should be updated as implementation progresses
+- New tasks should be added as needed
+- Consider dependencies between tasks when planning implementation
+
+## Task Labels
+- 🔴 Critical
+- 🟡 Important
+- 🟢 Normal
+- ⚪ Optional
+
+## Progress Tracking
+- Create issue for each task
+- Link PRs to issues
+- Update documentation as features are completed
+- Regular progress reviews
+
+---
+
+*Last Updated: 12/06/2024*
+
+
 ## Installation
 
 ### Prerequisites
@@ -70,11 +180,13 @@ python main_gui.py
 1. **Adding Domains**
    - Enter the wiki URL in the input field
    - Click "Add Domain" to register
+   - Click "Show Domains" to list all registered domains
+   - Click "Start Scraping" to begin data collection or
+   - Click "Select Domains to Scrape" to open a tree view and selectively scrape to each domains' database
 
 2. **Managing Data**
-   - Use "Select Database" to choose storage location
-   - Click "Start Scraping" to begin data collection
-   - Search using the keyword field
+   - Use "Select Database" to choose the "Game" or associated domain
+   - Search using the keyword field by name or tag
 
 ### Configuration
 - Theme customization via `resources/theme.json`
@@ -124,13 +236,6 @@ See `CONTRIBUTING.md` for detailed guidelines.
 - GUI tests using pytest-kivy
 - Performance testing for cache system
 
-## Roadmap
-See `to_do_list.md` for detailed development plans, including:
-- Multi-threaded scraping
-- Cloud database integration
-- Mobile platform support
-- Enhanced search capabilities
-
 ## License
 This project is licensed under the MIT License - see LICENSE file for details.
 
@@ -146,5 +251,3 @@ This project is licensed under the MIT License - see LICENSE file for details.
 - Contact maintainers for security concerns
 
 ---
-
-*For detailed documentation, visit our [Wiki](https://github.com/username/questvault/wiki)*
