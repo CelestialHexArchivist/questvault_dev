@@ -1,0 +1,34 @@
+#:kivy 2.0.0
+
+<Button>:
+    background_normal: ''
+    background_color: app.theme.get_color('primary')
+    color: app.theme.get_color('text')
+    font_name: app.theme.get_font()[0]
+    font_size: app.theme.get_font('button')[1]
+    size_hint_y: None
+    height: app.theme.get_dimension('button_height')
+    border_radius: [app.theme.get_dimension('border_radius')]
+
+<Label>:
+    color: app.theme.get_color('text')
+    font_name: app.theme.get_font()[0]
+    font_size: app.theme.get_font()[1]
+
+<TextInput>:
+    background_color: app.theme.get_color('background')
+    foreground_color: app.theme.get_color('text')
+    font_name: app.theme.get_font()[0]
+    font_size: app.theme.get_font()[1]
+    cursor_color: app.theme.get_color('secondary')
+    multiline: False
+    padding: [app.theme.get_dimension('padding'), app.theme.get_dimension('padding')]
+    size_hint_y: None
+    height: app.theme.get_dimension('input_height')
+
+<Popup>:
+    background: 'resources/icons/popup_background.png'
+    title_color: app.theme.get_color('text')
+    title_font: app.theme.get_font()[0]
+    title_size: app.theme.get_font('title')[1]
+    separator_color: app.theme.get_color('secondary') 

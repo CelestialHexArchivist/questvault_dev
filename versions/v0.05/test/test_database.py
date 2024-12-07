@@ -1,7 +1,7 @@
 import os
 import sqlite3
 import pytest
-from core.database_manager import initialize_database, get_all_items, search_items_by_keyword, search_items_by_category
+from core.database_manager import DatabaseManager
 
 TEST_DB = "test_database.db"
 
@@ -68,3 +68,16 @@ def test_search_no_results(setup_test_db):
     """Test searching for a keyword that has no matches."""
     results = search_items_by_keyword(TEST_DB, "nonexistent")
     assert results == [], "Should return an empty list for nonexistent keyword"
+
+class TestDatabaseManager:
+    @pytest.fixture
+    def db_manager(self):
+        db = DatabaseManager(":memory:")  # Use in-memory database for testing
+        db.initialize_database()
+        return db
+    
+    def test_add_domain(self, db_manager):
+        assert db_manager.add_domain("https://example.com")
+        domains = db_manager.get_domains()
+        assert len(domains) == 1
+        assert domains[0] == "https://example.com"

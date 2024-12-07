@@ -1,0 +1,49 @@
+{
+    "colors": {
+        "primary": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "secondary": [
+            0.294,
+            0,
+            0.509,
+            1
+        ],
+        "background": [
+            0.102,
+            0.102,
+            0.102,
+            1
+        ],
+        "text": [
+            0,
+            0,
+            0,
+            1
+        ],
+        "accent": [
+            1,
+            0.412,
+            0.706,
+            1
+        ]
+    },
+    "fonts": {
+        "name": "EmilysCandy-Regular",
+        "sizes": {
+            "title": 24.0,
+            "button": 18.0,
+            "text": 16.0
+        }
+    },
+    "dimensions": {
+        "padding": 20.0,
+        "spacing": 10.0,
+        "button_height": 44.0,
+        "input_height": 44.0,
+        "border_radius": 5.0
+    }
+}

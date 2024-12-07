@@ -62,3 +62,25 @@ def scrape_item_details(item_name, item_url, callback=None):
         "description": description,
         "category": category,
     }
+
+def scrape_items(url, callback=None):
+    """
+    Scrape items from the given URL
+    
+    Args:
+        url (str): URL to scrape
+        callback (function): Optional callback for progress updates
+        
+    Returns:
+        list: List of (name, description, category) tuples
+    """
+    if callback:
+        callback(f"Starting scrape of {url}")
+    
+    # Your scraping logic here
+    items = []  # List of (name, description, category) tuples
+    
+    if callback:
+        callback(f"Completed scraping {url}")
+    
+    return items
